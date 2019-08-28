@@ -1,0 +1,2 @@
+# amazing
+everything is nothing
