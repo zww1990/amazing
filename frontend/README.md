@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Quick links
 [Angular 中文版](https://angular.cn/) |
 [Angular 英文版](https://angular.io/) |
-[Angular Ant Design](http://ng.ant.design/docs/introduce/zh)
+[Angular Ant Design](https://ng.ant.design/docs/introduce/zh)
