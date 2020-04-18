@@ -6,16 +6,7 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Logger name="com.wiwj.bdm.mq.mapper" level="debug">
-			<AppenderRef ref="Console"/>
-		</Logger>
-		<Logger name="org.apache.zookeeper" level="warn">
-			<AppenderRef ref="Console"/>
-		</Logger>
-		<Logger name="org.I0Itec.zkclient" level="warn">
-			<AppenderRef ref="Console"/>
-		</Logger>
-		<Logger name="org.apache.curator" level="warn">
+		<Logger name="com.amazing.mapper" level="debug">
 			<AppenderRef ref="Console"/>
 		</Logger>
 		<Root level="info">

@@ -79,12 +79,6 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- jackson -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-		
 		<!-- junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -110,6 +104,7 @@
 		    <artifactId>log4j-jcl</artifactId>
 		</dependency>
 		
+		<!-- oracle -->
 		<dependency>
 			<groupId>com.oracle.ojdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
@@ -141,14 +136,18 @@
 			<artifactId>orai18n</artifactId>
 		</dependency>
 		
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
 		<!-- swagger -->
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
-			<version>1.5.22</version>
+			<version>1.5.24</version>
 		</dependency>
-		
-	    
 	</dependencies>
 
 	<build>
