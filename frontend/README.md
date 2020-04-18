@@ -8,7 +8,8 @@
 
 ## 代码脚手架
 
-运行 `ng generate component component-name` 来生成一个新的组件. 您也可以使用 `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+运行 `ng generate component component-name` 来生成一个新的组件. 
+您也可以使用 `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## 构建
 
