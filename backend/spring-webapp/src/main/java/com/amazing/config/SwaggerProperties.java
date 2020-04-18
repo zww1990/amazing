@@ -1,7 +1,12 @@
-package com.amazing.web.config;
+package com.amazing.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * Swagger属性类
+ * 
+ * @author home
+ */
 @ConfigurationProperties("swagger")
 public class SwaggerProperties {
 	private String title;

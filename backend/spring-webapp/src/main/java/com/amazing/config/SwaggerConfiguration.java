@@ -1,4 +1,4 @@
-package com.amazing.web.config;
+package com.amazing.config;
 
 import java.util.Collections;
 
@@ -15,6 +15,11 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Swagger配置类
+ * 
+ * @author home
+ */
 @Configuration
 @EnableSwagger2
 @ConditionalOnProperty(name = "swagger.enable", matchIfMissing = true)

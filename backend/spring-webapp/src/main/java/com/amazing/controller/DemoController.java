@@ -1,4 +1,4 @@
-package com.amazing.web.controller;
+package com.amazing.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.amazing.web.config.UserInfo;
-import com.amazing.web.model.UserModel;
+import com.amazing.support.UserInfo;
+import com.amazing.support.UserModel;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -27,6 +27,11 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import springfox.documentation.annotations.ApiIgnore;
 
+/**
+ * 示例控制器，部署生产环境时请移除。
+ * 
+ * @author home
+ */
 @RestController
 @RequestMapping("/demo")
 @Api(tags = "API示例")

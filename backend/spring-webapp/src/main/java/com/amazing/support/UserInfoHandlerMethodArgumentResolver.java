@@ -1,4 +1,4 @@
-package com.amazing.web.config;
+package com.amazing.support;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +12,13 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import com.amazing.web.model.UserModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * 自定义方法参数解析器
+ * 
+ * @author home
+ */
 public class UserInfoHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
 	private static final Logger log = LoggerFactory.getLogger(UserInfoHandlerMethodArgumentResolver.class);
 	private ObjectMapper mapper;
