@@ -1,13 +1,13 @@
 [
   {
     "menuId": 1,
-    "menuName": "加班",
+    "menuName": "示例1",
     "menuIcon": "appstore",
     "parentMenuId": null
   },
   {
     "menuId": 11,
-    "menuName": "我的加班",
+    "menuName": "示例1.1",
     "menuUrl": "/demo/page1",
     "parentMenuId": 1
   },
