@@ -17,7 +17,7 @@ import springfox.documentation.annotations.ApiIgnore;
 @RequestMapping
 @ApiIgnore("忽略根访问路径")
 public class IndexController {
-	@GetMapping("/")
+	@GetMapping({ "/", "/csrf" })
 	public Object index() {
 		return Arrays.asList("你好，", "世界！");
 	}
