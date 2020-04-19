@@ -2,13 +2,16 @@ package com.amazing.test;
 
 import javax.annotation.Resource;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.amazing.SpringWebApplication;
 
-@SpringJUnitWebConfig(classes = SpringWebApplication.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = SpringWebApplication.class)
 public class AppTest {
 	@Resource
 	private ApplicationContext context;
