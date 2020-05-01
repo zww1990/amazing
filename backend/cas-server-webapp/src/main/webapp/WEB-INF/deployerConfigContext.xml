@@ -106,9 +106,15 @@
           class="org.jasig.cas.authentication.AcceptUsersAuthenticationHandler">
         <property name="users">
             <map>
-                <entry key="admin" value="admin"/>
-                <entry key="guest" value="guest"/>
+                <entry key="admin" value="21232f297a57a5a743894a0e4a801fc3"/>
+                <entry key="guest" value="084e0343a0486ff05530df6c705c8bb4"/>
             </map>
+        </property>
+        <property name="passwordEncoder">
+        	<bean class="org.jasig.cas.authentication.handler.DefaultPasswordEncoder">
+        		<constructor-arg type="java.lang.String" value="MD5"/>
+        		<property name="characterEncoding" value="UTF-8"/>
+        	</bean>
         </property>
     </bean>
 
