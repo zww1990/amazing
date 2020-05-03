@@ -297,6 +297,19 @@
           <warName>cas</warName>
         </configuration>
       </plugin>
+		<plugin>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-maven-plugin</artifactId>
+			<version>9.4.25.v20191220</version>
+			<configuration>
+				<webApp>
+					<contextPath>/cas</contextPath>
+				</webApp>
+				<httpConnector>
+					<port>8080</port>
+				</httpConnector>
+			</configuration>
+		</plugin>
     </plugins>
   </build>
 
