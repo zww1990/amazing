@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.amazing.support.UserInfo;
 import com.amazing.support.UserModel;
 
 import io.swagger.annotations.Api;
@@ -50,14 +49,6 @@ public class DemoController {
 		return user;
 	}
 
-	@PutMapping("/user")
-	@ApiOperation(value = "请求头传参", notes = "设置请求头User-Info作为参数的名称，参数值是json字符串，需要经过base64转码，否则视为无效参数")
-	@ApiImplicitParam(name = UserInfo.DEFAULT_NAME, value = "用户信息", paramType = "header", required = true)
-	public UserModel user(@ApiIgnore @UserInfo UserModel user) {
-		log.info("用户ID：{}，用户名：{}", user.getUserId(), user.getUserName());
-		return user;
-	}
-
 	@PostMapping("/upload")
 	@ApiOperation(value = "文件上传", notes = "文件上传的请求内容类型必须是multipart/form-data")
 	@ApiImplicitParams({
@@ -72,7 +63,7 @@ public class DemoController {
 				file.getSize(), user.getUserId(), user.getUserName());
 	}
 
-	@PostMapping("/json")
+	@PutMapping("/json")
 	@ApiOperation(value = "提交json格式数据", notes = "提交json格式数据时，请求内容类型必须是application/json")
 	@ApiImplicitParam(name = "user", value = "用户模型", paramType = "body", dataType = "UserModel", required = true)
 	public UserModel json(@RequestBody UserModel user) {
