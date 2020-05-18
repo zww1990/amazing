@@ -7,7 +7,7 @@ import org.jasig.cas.client.boot.configuration.EnableCasClient.ValidationType;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.lang.NonNull;
 
-@ConfigurationProperties(prefix = "cas", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "cas")
 public class CasClientConfigurationProperties {
 
 	/**

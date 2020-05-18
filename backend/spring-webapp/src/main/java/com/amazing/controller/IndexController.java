@@ -1,13 +1,12 @@
 package com.amazing.controller;
 
-import java.security.Principal;
 import java.util.Arrays;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.RedirectView;
 
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -16,15 +15,20 @@ import springfox.documentation.annotations.ApiIgnore;
  * 
  * @author home
  */
-@RestController
-@RequestMapping
+@Controller
 @ApiIgnore("忽略根访问路径")
 public class IndexController {
-	private static final Logger log = LoggerFactory.getLogger(IndexController.class);
+	@Value("${cas.client-webapp-url}")
+	private String clientWebappUrl;
 
-	@GetMapping({ "/", "/csrf" })
-	public Object index(Principal principal) {
-		log.info("{}", principal);
+	@GetMapping("/csrf")
+	@ResponseBody
+	public Object csrf() {
 		return Arrays.asList("你好，", "世界！");
+	}
+
+	@GetMapping("/")
+	public Object index() {
+		return new RedirectView(this.clientWebappUrl);
 	}
 }
