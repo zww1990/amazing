@@ -2,6 +2,8 @@ package com.amazing.controller;
 
 import java.util.Arrays;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,8 @@ import springfox.documentation.annotations.ApiIgnore;
 public class IndexController {
 	@Value("${cas.client-webapp-url}")
 	private String clientWebappUrl;
+	@Value("${cas.server-logout-url}")
+	private String serverLogoutUrl;
 
 	@GetMapping("/csrf")
 	@ResponseBody
@@ -30,5 +34,12 @@ public class IndexController {
 	@GetMapping("/")
 	public Object index() {
 		return new RedirectView(this.clientWebappUrl);
+	}
+
+	@GetMapping("/logout")
+	@ResponseBody
+	public Object logout(HttpSession session) {
+		session.invalidate();
+		return Arrays.asList(this.serverLogoutUrl);
 	}
 }

@@ -18,7 +18,7 @@ public class MenuController {
 
 	@GetMapping("/query")
 	public Object query() {
-		log.info("菜单查询");
+		log.info("查询菜单");
 		MenuModel m1 = new MenuModel();
 		m1.setMenuId(1);
 		m1.setMenuName("示例1");
