@@ -1,8 +1,4 @@
-import {
-  ActivatedRouteSnapshot,
-  DetachedRouteHandle,
-  RouteReuseStrategy
-} from '@angular/router';
+import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
 
 /**
  * @description 路由重用策略，当多tab标签切换时，保留上次操作的数据。
@@ -29,9 +25,7 @@ export class SimpleReuseStrategy implements RouteReuseStrategy {
    * @description 删除所有的路由快照
    */
   static deleteAllRouteSnapshot() {
-    Object.keys(SimpleReuseStrategy.handlers).forEach(
-      key => delete SimpleReuseStrategy.handlers[key]
-    );
+    Object.keys(SimpleReuseStrategy.handlers).forEach(key => delete SimpleReuseStrategy.handlers[key]);
     SimpleReuseStrategy.waitDelete = null;
   }
 
@@ -40,9 +34,7 @@ export class SimpleReuseStrategy implements RouteReuseStrategy {
    * @param route 当前激活的路由快照
    */
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
-    return !SimpleReuseStrategy.excludePaths.includes(
-      route['_routerState'].url
-    );
+    return !SimpleReuseStrategy.excludePaths.includes(route['_routerState'].url);
   }
 
   /**
@@ -52,10 +44,7 @@ export class SimpleReuseStrategy implements RouteReuseStrategy {
    */
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
     const url: string = route['_routerState'].url;
-    if (
-      SimpleReuseStrategy.waitDelete &&
-      SimpleReuseStrategy.waitDelete === url
-    ) {
+    if (SimpleReuseStrategy.waitDelete && SimpleReuseStrategy.waitDelete === url) {
       // 如果待删除是当前路由则不存储快照
       SimpleReuseStrategy.waitDelete = null;
       return;
@@ -87,10 +76,7 @@ export class SimpleReuseStrategy implements RouteReuseStrategy {
    * @param future 即将到达激活状态的路由快照
    * @param curr 当前激活的路由快照
    */
-  shouldReuseRoute(
-    future: ActivatedRouteSnapshot,
-    curr: ActivatedRouteSnapshot
-  ): boolean {
+  shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
     return future.routeConfig === curr.routeConfig;
   }
 }

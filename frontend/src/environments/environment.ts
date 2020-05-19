@@ -7,11 +7,6 @@
 export const environment = {
   production: false,
   mode: 'DEV',
-  api: {
-    menu: {
-      queryMenus: '/assets/data/menu.json'
-    }
-  }
 };
 
 /*

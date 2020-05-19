@@ -6,6 +6,13 @@ const proxy = {
       '^/cas': ''
     },
     secure: false
+  },
+  '/spring': {
+    target: 'http://localhost:8081/',
+    pathRewrite: {
+      '^/spring': ''
+    },
+    secure: false
   }
 };
 

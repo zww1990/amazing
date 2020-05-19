@@ -19,15 +19,10 @@ export class LayoutComponent implements OnInit {
   menus: MenuItem[] = [];
   tabs: MenuItem[] = [];
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private confirm: NzModalService,
-    private userService: UserService
-  ) {}
+  constructor(private router: Router, private route: ActivatedRoute, private confirm: NzModalService, private userService: UserService) { }
 
-  ngOnInit() {
-    this.user = this.userService.querySessionUser();
+  async ngOnInit() {
+    this.user = await this.userService.querySessionUser();
     this.openDefaultTab();
     this.route.data.subscribe(data => {
       this.menus = data.menus;
@@ -44,13 +39,7 @@ export class LayoutComponent implements OnInit {
    * @description 打开默认的标签
    */
   openDefaultTab() {
-    this.tabs = [
-      {
-        menuName: '首页',
-        menuUrl: '',
-        allowDelete: false
-      }
-    ];
+    this.tabs = [{ menuName: '首页', menuUrl: '', allowDelete: false }];
   }
 
   /**
@@ -77,9 +66,7 @@ export class LayoutComponent implements OnInit {
     this.menus.forEach(child => {
       child.selected = child.menuId === menu.parentMenuId && !this.isCollapsed;
       if (child.children && child.children.length) {
-        child.children.forEach(item => {
-          item.selected = item.menuId === menu.menuId;
-        });
+        child.children.forEach(item => item.selected = item.menuId === menu.menuId);
       }
     });
   }
@@ -145,10 +132,7 @@ export class LayoutComponent implements OnInit {
     this.confirm.confirm({
       nzTitle: '退出提示',
       nzContent: '您确认要退出APP吗？',
-      nzOnOk: () => {
-        this.userService.removeSessionUser();
-        this.router.navigate(['/login']);
-      }
+      nzOnOk: () => this.userService.removeSessionUser()
     });
   }
 

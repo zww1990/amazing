@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanActivateChild,
-  CanLoad,
-  Route,
-  Router,
-  RouterStateSnapshot
-} from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot } from '@angular/router';
 import { UserService } from './user/user.service';
 import { MenuService } from './menu/menu.service';
 
@@ -23,11 +15,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param userService 用户服务
    * @param menuService 菜单服务
    */
-  constructor(
-    private router: Router,
-    private userService: UserService,
-    private menuService: MenuService
-  ) {}
+  constructor(private router: Router, private userService: UserService, private menuService: MenuService) { }
 
   /**
    * @description 检查路由的访问权限
@@ -60,16 +48,14 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param state 即将到达的状态
    */
   async checkLogin(state?: RouterStateSnapshot) {
-    if (!this.userService.querySessionUser()) {
+    if (!await this.userService.querySessionUser()) {
       this.router.navigate(['/login']);
       return false;
     }
     if (state) {
       const index = state.url.lastIndexOf('?');
       const url = index === -1 ? state.url : state.url.substring(0, index);
-      const included = (await this.menuService.queryUserMenuUrls()).includes(
-        url
-      );
+      const included = (await this.menuService.queryUserMenuUrls()).includes(url);
       if (!included) {
         this.router.navigate(['']);
       }
