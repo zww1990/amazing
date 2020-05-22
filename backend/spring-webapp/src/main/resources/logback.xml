@@ -9,4 +9,6 @@
 	<root level="info">
 		<appender-ref ref="CONSOLE" />
 	</root>
+	<!-- 日志中打印请求路径列表 -->
+	<logger name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="trace"/>
 </configuration>

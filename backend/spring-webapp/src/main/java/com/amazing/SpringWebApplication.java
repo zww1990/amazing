@@ -1,14 +1,11 @@
 package com.amazing;
 
-import org.jasig.cas.client.boot.configuration.EnableCasClient;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.aop.AopAutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration;
 import org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
@@ -34,11 +31,5 @@ public class SpringWebApplication {
 		ApplicationContext context = SpringApplication.run(SpringWebApplication.class, args);
 		log.info("应用程序上下文Bean定义计数={}", context.getBeanDefinitionCount());
 //		java.util.Arrays.stream(context.getBeanDefinitionNames()).forEach(System.err::println);
-	}
-
-	@EnableCasClient
-	@ConditionalOnProperty(prefix = "cas", name = { "server-url-prefix", "server-login-url", "client-host-url" })
-	@ConditionalOnWebApplication
-	public static class CasClientAutoConfig {
 	}
 }

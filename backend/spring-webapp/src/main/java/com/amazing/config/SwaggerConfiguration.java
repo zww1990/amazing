@@ -1,5 +1,6 @@
 package com.amazing.config;
 
+import java.util.Arrays;
 import java.util.Collections;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -7,6 +8,9 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplicat
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -22,7 +26,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@ConditionalOnProperty(name = "swagger.enable", matchIfMissing = true)
+@ConditionalOnProperty(prefix = SwaggerProperties.SWAGGER_PROPERTIES_PREFIX, name = "enabled", havingValue = "true")
 @ConditionalOnWebApplication
 @EnableConfigurationProperties(SwaggerProperties.class)
 public class SwaggerConfiguration {
@@ -35,4 +39,17 @@ public class SwaggerConfiguration {
 						props.getLicense(), props.getLicenseUrl(), Collections.emptyList()));
 	}
 
+	@Bean
+	public CsrfController csrfController() {
+		return new CsrfController();
+	}
+
+	@RequestMapping
+	public static class CsrfController {
+		@GetMapping("/csrf")
+		@ResponseBody
+		public Object csrf() {
+			return Arrays.asList("你好，世界！");
+		}
+	}
 }

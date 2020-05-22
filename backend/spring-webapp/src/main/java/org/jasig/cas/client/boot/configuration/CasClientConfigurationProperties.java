@@ -7,8 +7,9 @@ import org.jasig.cas.client.boot.configuration.EnableCasClient.ValidationType;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.lang.NonNull;
 
-@ConfigurationProperties(prefix = "cas")
+@ConfigurationProperties(prefix = CasClientConfigurationProperties.CAS_CLIENT_CONFIG_PROPERTIES_PREFIX)
 public class CasClientConfigurationProperties {
+	public static final String CAS_CLIENT_CONFIG_PROPERTIES_PREFIX = "cas";
 
 	/**
 	 * CAS server URL E.g. https://example.com/cas or https://cas.example. Required.
@@ -97,6 +98,12 @@ public class CasClientConfigurationProperties {
 	private ValidationType validationType = ValidationType.CAS3;
 
 	private Boolean skipTicketValidation = false;
+
+	private String serverLogoutUrl;
+
+	private String clientWebappUrl;
+
+	private boolean enabled;
 
 	public String getServerUrlPrefix() {
 		return serverUrlPrefix;
@@ -232,5 +239,29 @@ public class CasClientConfigurationProperties {
 
 	public void setSingleSignOutUrlPatterns(List<String> singleSignOutUrlPatterns) {
 		this.singleSignOutUrlPatterns = singleSignOutUrlPatterns;
+	}
+
+	public String getServerLogoutUrl() {
+		return serverLogoutUrl;
+	}
+
+	public String getClientWebappUrl() {
+		return clientWebappUrl;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setServerLogoutUrl(String serverLogoutUrl) {
+		this.serverLogoutUrl = serverLogoutUrl;
+	}
+
+	public void setClientWebappUrl(String clientWebappUrl) {
+		this.clientWebappUrl = clientWebappUrl;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 }
