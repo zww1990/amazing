@@ -1,5 +1,6 @@
 package com.amazing.controller;
 
+import java.security.Principal;
 import java.util.Arrays;
 
 import org.slf4j.Logger;
@@ -13,11 +14,10 @@ import com.amazing.support.MenuModel;
 @RestController
 @RequestMapping("/menu")
 public class MenuController {
-
 	private static final Logger log = LoggerFactory.getLogger(MenuController.class);
 
 	@GetMapping("/query")
-	public Object query() {
+	public Object query(Principal principal) {
 		log.info("查询菜单");
 		MenuModel m1 = new MenuModel();
 		m1.setMenuId(1);
