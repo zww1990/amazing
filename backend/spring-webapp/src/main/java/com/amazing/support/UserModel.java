@@ -6,15 +6,15 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "用户模型")
 public class UserModel {
 	@ApiModelProperty(value = "用户ID", required = true)
-	private Integer userId;
+	private String userId;
 	@ApiModelProperty(value = "用户名", required = true)
 	private String userName;
 
-	public Integer getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Integer userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
