@@ -1,17 +1,11 @@
 const chalk = require('chalk');
 const proxy = {
   '/cas': {
-    target: 'http://sso.bacic5i5j.com/',
-    pathRewrite: {
-      '^/cas': ''
-    },
+    target: 'http://localhost:8080/',
     secure: false
   },
   '/spring': {
     target: 'http://localhost:8081/',
-    pathRewrite: {
-      '^/spring': ''
-    },
     secure: false
   }
 };
