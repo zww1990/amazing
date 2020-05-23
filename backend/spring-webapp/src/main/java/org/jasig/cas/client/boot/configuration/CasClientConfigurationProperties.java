@@ -99,10 +99,13 @@ public class CasClientConfigurationProperties {
 
 	private Boolean skipTicketValidation = false;
 
+	/** CAS服务端登出地址 */
 	private String serverLogoutUrl;
 
+	/** 客户端Web应用地址 */
 	private String clientWebappUrl;
 
+	/** 是否开启CAS */
 	private boolean enabled;
 
 	public String getServerUrlPrefix() {

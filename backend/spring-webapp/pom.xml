@@ -21,8 +21,6 @@
 	<properties>
 		<maven.test.skip>true</maven.test.skip>
 		<java.version>1.8</java.version>
-		<swagger.version>2.9.2</swagger.version>
-		<java.cas.client.version>3.6.1</java.cas.client.version>
 	</properties>
 
 	<dependencies>
@@ -72,18 +70,13 @@
 	    </dependency>
 	    
 	    
-		<!-- ↓mybatis↓ -->
-		<dependency>
-	      <groupId>org.mybatis.spring.boot</groupId>
-	      <artifactId>mybatis-spring-boot-starter</artifactId>
-	      <version>2.1.2</version>
-	    </dependency>
+		<!-- ↓mybatis pagehelper↓ -->
 	    <dependency>
 		    <groupId>com.github.pagehelper</groupId>
 		    <artifactId>pagehelper-spring-boot-starter</artifactId>
 		    <version>1.2.13</version>
 		</dependency>
-		<!-- ↑mybatis↑ -->
+		<!-- ↑mybatis pagehelper↑ -->
 		
 		<!-- ↓mysql driver↓ -->
 		<dependency>
@@ -95,27 +88,17 @@
 
 		<!-- ↓swagger↓ -->
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>${swagger.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>${swagger.version}</version>
+		    <groupId>com.spring4all</groupId>
+		    <artifactId>swagger-spring-boot-starter</artifactId>
+		    <version>1.9.1.RELEASE</version>
 		</dependency>
 		<!-- ↑swagger↑ -->
 		
 		<!-- ↓cas client↓ -->
 		<dependency>
-			<groupId>org.jasig.cas.client</groupId>
-			<artifactId>cas-client-core</artifactId>
-			<version>${java.cas.client.version}</version>
-		</dependency>
-		<dependency>
 		   <groupId>org.jasig.cas.client</groupId>
 		   <artifactId>cas-client-support-springboot</artifactId>
-		   <version>${java.cas.client.version}</version>
+		   <version>3.6.1</version>
 		</dependency>
 		<!-- ↑cas client↑ -->
 	</dependencies>

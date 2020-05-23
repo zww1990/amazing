@@ -18,12 +18,15 @@ import org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfigura
 import org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
+
 @SpringBootApplication(exclude = { TaskExecutionAutoConfiguration.class, TaskSchedulingAutoConfiguration.class,
 		ProjectInfoAutoConfiguration.class, ValidationAutoConfiguration.class, AopAutoConfiguration.class,
 		OAuth2ResourceServerAutoConfiguration.class, MultipartAutoConfiguration.class,
 		PersistenceExceptionTranslationAutoConfiguration.class, RestTemplateAutoConfiguration.class,
 		JdbcTemplateAutoConfiguration.class, WebSocketServletAutoConfiguration.class })
 @MapperScan("com.amazing.mapper")
+@EnableSwagger2Doc
 public class SpringWebApplication {
 	private static final Logger log = LoggerFactory.getLogger(SpringWebApplication.class);
 
