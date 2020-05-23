@@ -23,10 +23,10 @@ public class UserController {
 		UserModel model = new UserModel();
 		if (casEnabled) {
 			log.info("UserId = {}", principal.getName());
-			model.setUserId(Integer.parseInt(principal.getName()));
+			model.setUserId(principal.getName());
 			model.setUserName("攻城狮");
 		} else {
-			model.setUserId(666666);
+			model.setUserId("666666");
 			model.setUserName("超级管理员");
 		}
 		return model;
