@@ -85,14 +85,10 @@
       - Loads the CAS ApplicationContext.
     -->
     <listener>
-        <listener-class>
-            org.springframework.web.context.ContextLoaderListener
-        </listener-class>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <listener>
-        <listener-class>
-            org.jasig.cas.CasEnvironmentContextListener
-        </listener-class>
+        <listener-class>org.jasig.cas.CasEnvironmentContextListener</listener-class>
     </listener>
 
     <!--
@@ -105,9 +101,7 @@
     -->
     <servlet>
         <servlet-name>cas</servlet-name>
-        <servlet-class>
-            org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/cas-servlet.xml, /WEB-INF/cas-servlet-*.xml</param-value>
