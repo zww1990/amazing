@@ -44,8 +44,8 @@ export class UserService {
       const logout = (await this.http.get<string[]>('/spring/logout').toPromise())[0];
       location.href = logout;
     } catch (error) {
-      this.cas.casDeleteTGT(tgt);
-      this.router.navigate(['/login']);
+      await this.cas.casDeleteTGT(tgt);
+      location.href = location.origin;
     }
   }
 }
