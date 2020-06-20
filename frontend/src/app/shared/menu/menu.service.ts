@@ -18,7 +18,11 @@ export class MenuService {
    */
   async queryMenus(): Promise<MenuItem[]> {
     if (!this.menuItems) {
-      this.menuItems = await this.http.get<MenuItem[]>('/spring/menu/query').toPromise();
+      try {
+        this.menuItems = await this.http.get<MenuItem[]>('/spring/menu/query').toPromise();
+      } catch (error) {
+        this.menuItems = await this.http.get<MenuItem[]>('/assets/data/menu.json').toPromise();
+      }
     }
     return this.menuItems;
   }
@@ -30,9 +34,7 @@ export class MenuService {
     if (text) {
       return JSON.parse(text);
     }
-    if (!this.menuItems) {
-      this.menuItems = await this.http.get<MenuItem[]>('/spring/menu/query').toPromise();
-    }
+    await this.queryMenus();
     const userMenuUrl = this.menuItems.filter(v => !!v.menuUrl).map(v => v.menuUrl);
     if (!userMenuUrl.includes('/demo/index')) {
       userMenuUrl.push('/demo/index');
