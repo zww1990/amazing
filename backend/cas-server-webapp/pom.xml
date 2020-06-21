@@ -52,6 +52,18 @@
             	<groupId>org.hibernate</groupId>
             	<artifactId>hibernate-core</artifactId>
             </exclusion>
+            <exclusion>
+            	<groupId>io.dropwizard.metrics</groupId>
+            	<artifactId>metrics-servlets</artifactId>
+            </exclusion>
+            <exclusion>
+            	<groupId>io.dropwizard.metrics</groupId>
+            	<artifactId>metrics-annotation</artifactId>
+            </exclusion>
+            <exclusion>
+            	<groupId>io.dropwizard.metrics</groupId>
+            	<artifactId>metrics-core</artifactId>
+            </exclusion>
         </exclusions>
     </dependency>
     <!-- ↓添加restful支持↓ -->
@@ -134,21 +146,11 @@
       <artifactId>cas-server-security-filter</artifactId>
       <version>${cas-server-security-filter.version}</version>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>com.ryantenney.metrics</groupId>
       <artifactId>metrics-spring</artifactId>
       <version>${metrics.spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.dropwizard.metrics</groupId>
-      <artifactId>metrics-jvm</artifactId>
-      <version>${metrics.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.dropwizard.metrics</groupId>
-      <artifactId>metrics-servlets</artifactId>
-      <version>${metrics.version}</version>
-    </dependency>
+    </dependency> -->
     
     <dependency>
             <groupId>junit</groupId>

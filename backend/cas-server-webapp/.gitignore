@@ -2,6 +2,7 @@
 !/.project
 .project
 .settings
+.springBeans
 target
 test-output/
 bin/

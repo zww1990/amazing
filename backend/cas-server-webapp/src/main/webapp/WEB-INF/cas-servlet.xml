@@ -37,7 +37,9 @@
   | The base-package indicates where components stored. Spring will scan this
   | folder and find out the annotated beans and register it in Spring container.
   -->
-  <context:component-scan base-package="org.jasig.cas" />
+  <context:component-scan base-package="org.jasig.cas" >
+  	<context:exclude-filter type="assignable" expression="org.jasig.cas.web.report.StatisticsController"/>
+  </context:component-scan>
   <context:annotation-config/>
 
   <!-- Scan CAS artifacts to mvc annotations, such as controllers.
