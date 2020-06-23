@@ -87,10 +87,11 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <!-- 
     <listener>
         <listener-class>org.jasig.cas.CasEnvironmentContextListener</listener-class>
     </listener>
-
+ -->
     <!--
       - This is the Spring dispatcher servlet which delegates all requests to the
       - Spring WebMVC controllers as configured in cas-servlet.xml.

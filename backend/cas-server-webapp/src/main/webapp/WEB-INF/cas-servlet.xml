@@ -39,6 +39,7 @@
   -->
   <context:component-scan base-package="org.jasig.cas" >
   	<context:exclude-filter type="assignable" expression="org.jasig.cas.web.report.StatisticsController"/>
+  	<context:exclude-filter type="assignable" expression="org.jasig.cas.CasEnvironmentContextListener"/>
   </context:component-scan>
   <context:annotation-config/>
 
