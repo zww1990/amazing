@@ -117,11 +117,6 @@
 			</exclusions>
 		</dependency>
 		<!-- ↑添加jdbc支持↑ -->
-		<!-- <dependency>
-			<groupId>org.jasig.cas</groupId>
-			<artifactId>cas-server-integration-memcached</artifactId>
-			<version>${project.version}</version>
-		</dependency> -->
 		<!-- ↓springframework↓ -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -206,6 +201,13 @@
 		    <version>1.8.23.RELEASE</version>
 		</dependency>
 		<!-- ↑springframework↑ -->
+		<!-- ↓jedis↓ -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<!-- ↑jedis↑ -->
 		<!-- ↓junit↓ -->
 		<dependency>
 			<groupId>junit</groupId>
