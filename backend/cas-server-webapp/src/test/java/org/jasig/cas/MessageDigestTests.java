@@ -7,11 +7,13 @@ import org.jasig.cas.authentication.handler.DefaultPasswordEncoder;
 import org.junit.Test;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.crypto.codec.Hex;
+import org.springframework.security.crypto.password.MessageDigestPasswordEncoder;
 
+@SuppressWarnings("deprecation")
 public class MessageDigestTests {
 
 	@Test
-	public void testMd5Password() {
+	public void testMessageDigest() {
 		try {
 			String text = "hello";
 			MessageDigest instance = MessageDigest.getInstance("MD5");
@@ -23,7 +25,7 @@ public class MessageDigestTests {
 	}
 
 	@Test
-	public void testEncode() {
+	public void testDefaultPasswordEncoder() {
 		try {
 			DefaultPasswordEncoder encoder = new DefaultPasswordEncoder("MD5");
 			encoder.setCharacterEncoding(StandardCharsets.UTF_8.name());
@@ -34,10 +36,20 @@ public class MessageDigestTests {
 	}
 
 	@Test
-	public void testEncodePassword() {
+	public void testMd5PasswordEncoder() {
 		try {
 			Md5PasswordEncoder encoder = new Md5PasswordEncoder();
 			System.err.println(encoder.encodePassword("hello", null));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testMessageDigestPasswordEncoder() {
+		try {
+			MessageDigestPasswordEncoder encoder = new MessageDigestPasswordEncoder("MD5");
+			System.err.println(encoder.encode("hello"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
