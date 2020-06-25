@@ -5,7 +5,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * 提供用于redis操作的模板。
@@ -16,11 +15,10 @@ public class TicketRedisTemplate extends RedisTemplate<String, Ticket> {
 
 	public TicketRedisTemplate() {
 		super();
-		RedisSerializer<String> keySerializer = new StringRedisSerializer();
 		RedisSerializer<Object> valueSerializer = new JdkSerializationRedisSerializer();
-		this.setKeySerializer(keySerializer);
+		this.setKeySerializer(super.getStringSerializer());
+		this.setHashKeySerializer(super.getStringSerializer());
 		this.setValueSerializer(valueSerializer);
-		this.setHashKeySerializer(keySerializer);
 		this.setHashValueSerializer(valueSerializer);
 	}
 
