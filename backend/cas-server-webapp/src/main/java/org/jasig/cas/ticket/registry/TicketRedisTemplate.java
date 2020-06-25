@@ -16,12 +16,12 @@ public class TicketRedisTemplate extends RedisTemplate<String, Ticket> {
 
 	public TicketRedisTemplate() {
 		super();
-		RedisSerializer<String> string = new StringRedisSerializer();
-		JdkSerializationRedisSerializer jdk = new JdkSerializationRedisSerializer();
-		this.setKeySerializer(string);
-		this.setValueSerializer(jdk);
-		this.setHashKeySerializer(string);
-		this.setHashValueSerializer(jdk);
+		RedisSerializer<String> keySerializer = new StringRedisSerializer();
+		JdkSerializationRedisSerializer valueSerializer = new JdkSerializationRedisSerializer();
+		this.setKeySerializer(keySerializer);
+		this.setValueSerializer(valueSerializer);
+		this.setHashKeySerializer(keySerializer);
+		this.setHashValueSerializer(valueSerializer);
 	}
 
 	public TicketRedisTemplate(final RedisConnectionFactory connectionFactory) {
