@@ -59,16 +59,17 @@
     -->
     
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-    	<property name="maxTotal" value="8"/>
-    	<property name="maxIdle" value="8"/>
-    	<property name="minIdle" value="0"/>
-    	<property name="maxWaitMillis" value="-1"/>
+    	<property name="maxTotal" value="${redis.maxTotal}"/>
+    	<property name="maxIdle" value="${redis.maxIdle}"/>
+    	<property name="minIdle" value="${redis.minIdle}"/>
+    	<property name="maxWaitMillis" value="${redis.maxWaitMillis}"/>
     </bean>
     <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-    	<property name="hostName" value="localhost"/>
-    	<property name="port" value="6379"/>
-    	<property name="database" value="0"/>
-    	<property name="timeout" value="2000"/>
+    	<property name="hostName" value="${redis.hostName}"/>
+    	<property name="port" value="${redis.port}"/>
+    	<property name="database" value="${redis.database}"/>
+    	<property name="timeout" value="${redis.timeout}"/>
+    	<property name="password" value="${redis.password}"/>
     	<property name="poolConfig" ref="jedisPoolConfig"/>
     </bean>
     <bean id="ticketRedisTemplate" class="org.jasig.cas.ticket.registry.TicketRedisTemplate">
@@ -76,8 +77,8 @@
     </bean>
     <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.RedisTicketRegistry">
     	<constructor-arg ref="ticketRedisTemplate"/>
-    	<constructor-arg value="300"/>
-    	<constructor-arg value="300"/>
+    	<constructor-arg value="${tgt.timeToKillInSeconds:7200}"/>
+    	<constructor-arg value="${st.timeToKillInSeconds:30}"/>
     </bean>
     
 </beans>
