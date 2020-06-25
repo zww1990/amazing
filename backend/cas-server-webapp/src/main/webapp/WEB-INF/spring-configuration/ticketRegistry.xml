@@ -37,11 +37,11 @@
     </description>
 
     <!-- Ticket Registry -->
-    <!-- <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.DefaultTicketRegistry"/> -->
+    <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.DefaultTicketRegistry"/>
 
     <!--Quartz -->
     <!-- TICKET REGISTRY CLEANER -->
-    <!-- 
+    
     <bean id="ticketRegistryCleaner" class="org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner"
           c:centralAuthenticationService-ref="centralAuthenticationService"
           c:ticketRegistry-ref="ticketRegistry"/>
@@ -56,8 +56,8 @@
           p:jobDetail-ref="jobDetailTicketRegistryCleaner"
           p:startDelay="20000"
           p:repeatInterval="5000000"/>
-    -->
-    
+   
+    <!-- 
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
     	<property name="maxTotal" value="${redis.maxTotal}"/>
     	<property name="maxIdle" value="${redis.maxIdle}"/>
@@ -80,5 +80,5 @@
     	<constructor-arg value="${tgt.timeToKillInSeconds:7200}"/>
     	<constructor-arg value="${st.timeToKillInSeconds:30}"/>
     </bean>
-    
+     -->
 </beans>
