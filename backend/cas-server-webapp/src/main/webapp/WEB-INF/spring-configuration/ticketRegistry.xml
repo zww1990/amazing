@@ -64,7 +64,7 @@
     	<property name="minIdle" value="${redis.minIdle}"/>
     	<property name="maxWaitMillis" value="${redis.maxWaitMillis}"/>
     </bean>
-    <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+    <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" destroy-method="destroy">
     	<property name="hostName" value="${redis.hostName}"/>
     	<property name="port" value="${redis.port}"/>
     	<property name="database" value="${redis.database}"/>
