@@ -17,7 +17,7 @@ public class TicketRedisTemplate extends RedisTemplate<String, Ticket> {
 	public TicketRedisTemplate() {
 		super();
 		RedisSerializer<String> keySerializer = new StringRedisSerializer();
-		JdkSerializationRedisSerializer valueSerializer = new JdkSerializationRedisSerializer();
+		RedisSerializer<Object> valueSerializer = new JdkSerializationRedisSerializer();
 		this.setKeySerializer(keySerializer);
 		this.setValueSerializer(valueSerializer);
 		this.setHashKeySerializer(keySerializer);
