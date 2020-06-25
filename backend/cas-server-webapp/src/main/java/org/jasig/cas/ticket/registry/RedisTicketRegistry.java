@@ -28,12 +28,12 @@ public class RedisTicketRegistry extends AbstractDistributedTicketRegistry {
 	private final TicketRedisTemplate client;
 	/** TGT缓存条目超时（以秒为单位）。 */
 	@Min(0)
-	private final int tgtTimeout;
+	private final long tgtTimeout;
 	/** ST缓存条目超时（以秒为单位）。 */
 	@Min(0)
-	private final int stTimeout;
+	private final long stTimeout;
 
-	public RedisTicketRegistry(final TicketRedisTemplate client, final int tgtTimeout, final int stTimeout) {
+	public RedisTicketRegistry(final TicketRedisTemplate client, final long tgtTimeout, final long stTimeout) {
 		super();
 		this.client = client;
 		this.tgtTimeout = tgtTimeout;
@@ -119,7 +119,7 @@ public class RedisTicketRegistry extends AbstractDistributedTicketRegistry {
 	 * @param ticket 票证通用概念的接口。
 	 * @return 超时时间
 	 */
-	private int getTimeout(final Ticket ticket) {
+	private long getTimeout(final Ticket ticket) {
 		if (ticket instanceof TicketGrantingTicket) {
 			return this.tgtTimeout;
 		}
