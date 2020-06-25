@@ -138,8 +138,8 @@
     <bean id="attributeRepository" class="org.jasig.services.persondir.support.NamedStubPersonAttributeDao">
     	<!-- <property name="backingMap" ref="attrRepoBackingMap"/> -->
     </bean>
-
-    <!-- <util:map id="attrRepoBackingMap">
+<!-- 
+    <util:map id="attrRepoBackingMap">
         <entry key="uid" value="uid" />
         <entry key="eduPersonAffiliation" value="eduPersonAffiliation" />
         <entry key="groupMembership" value="groupMembership" />
@@ -151,10 +151,11 @@
                 <value>org</value>
             </list>
         </entry>
-    </util:map> -->
+    </util:map>
 
-    <!-- <bean id="serviceRegistryDao" class="org.jasig.cas.services.JsonServiceRegistryDao"
-          c:configDirectory="${service.registry.config.location:classpath:services}" /> -->
+    <bean id="serviceRegistryDao" class="org.jasig.cas.services.JsonServiceRegistryDao"
+          c:configDirectory="${service.registry.config.location:classpath:services}" />
+ -->
           <bean id="serviceRegistryDao" class="org.jasig.cas.services.InMemoryServiceRegistryDaoImpl">
           	<property name="registeredServices">
           		<list>
