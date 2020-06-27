@@ -11,6 +11,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,7 +40,10 @@ public class CasClientAutoConfig {
 
 		@GetMapping("/")
 		public Object index() {
-			return new RedirectView(properties.getClientWebappUrl());
+			if (StringUtils.hasText(properties.getClientWebappUrl())) {
+				return new RedirectView(properties.getClientWebappUrl());
+			}
+			return ResponseEntity.ok(Arrays.asList("你好世界！！！"));
 		}
 
 		@GetMapping("/logout")
