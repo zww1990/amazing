@@ -24,6 +24,7 @@
 	</properties>
 
 	<dependencies>
+		<!-- ↓springframework↓ -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -62,13 +63,14 @@
 	        </exclusion>
 	      </exclusions>
 	    </dependency>
+	    <!-- ↑springframework↑ -->
+	    <!-- ↓junit↓ -->
 	    <dependency>
 	      <groupId>junit</groupId>
 	      <artifactId>junit</artifactId>
 	      <scope>test</scope>
 	    </dependency>
-	    
-	    
+	    <!-- ↑junit↑ -->
 		<!-- ↓mybatis pagehelper↓ -->
 	    <dependency>
 		    <groupId>com.github.pagehelper</groupId>
@@ -76,14 +78,12 @@
 		    <version>1.2.13</version>
 		</dependency>
 		<!-- ↑mybatis pagehelper↑ -->
-		
 		<!-- ↓mysql driver↓ -->
 		<dependency>
 	      <groupId>mysql</groupId>
 	      <artifactId>mysql-connector-java</artifactId>
 	    </dependency>
 		<!-- ↑mysql driver↑ -->
-
 		<!-- ↓swagger↓ -->
 		<dependency>
 		    <groupId>com.spring4all</groupId>
@@ -91,7 +91,6 @@
 		    <version>1.9.1.RELEASE</version>
 		</dependency>
 		<!-- ↑swagger↑ -->
-		
 		<!-- ↓cas client↓ -->
 		<dependency>
 		   <groupId>org.jasig.cas.client</groupId>
