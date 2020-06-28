@@ -1,6 +1,6 @@
 # MyAngular
 
-该项目是使用 [Angular CLI](https://github.com/angular/angular-cli) 版本9.1.1生成的.
+该项目是使用 [Angular CLI](https://github.com/angular/angular-cli) 版本10.0.0生成的.
 
 ## 开发服务器
 
