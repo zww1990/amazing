@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.4.RELEASE</version>
+		<version>2.2.8.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -86,9 +86,19 @@
 		<!-- ↑mysql driver↑ -->
 		<!-- ↓swagger↓ -->
 		<dependency>
-		    <groupId>com.spring4all</groupId>
-		    <artifactId>swagger-spring-boot-starter</artifactId>
-		    <version>1.9.1.RELEASE</version>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.swagger</groupId>
+		    <artifactId>swagger-annotations</artifactId>
+		    <version>1.6.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.swagger</groupId>
+		    <artifactId>swagger-models</artifactId>
+		    <version>1.6.2</version>
 		</dependency>
 		<!-- ↑swagger↑ -->
 		<!-- ↓cas client↓ -->
