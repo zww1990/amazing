@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NzMessageService } from 'ng-zorro-antd';
+import { FormBuilder } from '@angular/forms';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-page1',
@@ -14,7 +14,7 @@ export class Page1Component implements OnInit {
     private msg: NzMessageService,
     private fb: FormBuilder,
     private http: HttpClient
-  ) {}
+  ) { }
 
   /**
    * @description 初始化

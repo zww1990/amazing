@@ -15,7 +15,11 @@ export class UserService {
    * @description 构造用户服务
    * @param cas CAS认证服务
    */
-  constructor(private cas: CasService, private http: HttpClient, private router: Router) { }
+  constructor(
+    private cas: CasService,
+    private http: HttpClient,
+    private router: Router
+  ) { }
 
   /**
    * @description 查询session中的用户
