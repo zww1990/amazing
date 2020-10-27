@@ -45,7 +45,7 @@ function resourceLoadedSuccessfully() {
         }
 
 
-        if (areCookiesEnabled()) {
+        if (navigator.cookieEnabled) {
            $('#cookiesDisabled').hide();
         } else {
            $('#cookiesDisabled').show();   
