@@ -176,7 +176,7 @@
           	</property>
           </bean>
 
-    <bean id="auditTrailManager" class="org.jasig.inspektr.audit.support.Slf4jLoggingAuditTrailManager" />
+    <bean id="auditTrailManager" class="org.jasig.inspektr.audit.support.SimpleLoggingAuditTrailManager" />
 
     <bean id="healthCheckMonitor" class="org.jasig.cas.monitor.HealthCheckMonitor" p:monitors-ref="monitorsList" />
 
