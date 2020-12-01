@@ -33,12 +33,12 @@
 		<javaClientGenerator targetPackage="${java.client.package}" targetProject="./src/main/java" type="XMLMAPPER"/>
 		
 		<!-- 指定要生成代码的数据表 -->
-		<table tableName="t_student" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false">
+		<table tableName="t_user" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false">
 			<!-- Oracle主键生成策略 -->
 			<!-- <generatedKey column="ID" sqlStatement="select BDM_SYNC_TASK_DETAIL_SEQ.nextval from dual"/> -->
 			
 			<!-- MySQL主键生成策略 -->
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true"/>
+			<generatedKey column="user_id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true"/>
 		</table>
 		
 	</context>
