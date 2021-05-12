@@ -305,7 +305,7 @@
 		<!-- Dependency Versions -->
 		<spring.version>4.3.26.RELEASE</spring.version>
 		<spring-webflow.version>2.4.8.RELEASE</spring-webflow.version>
-		<spring-security.version>4.2.16.RELEASE</spring-security.version>
+		<spring-security.version>5.2.10.RELEASE</spring-security.version>
 		<aspectj.version>1.8.6</aspectj.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<servlet.api.version>3.0.1</servlet.api.version>
